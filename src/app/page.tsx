@@ -4,7 +4,7 @@ import Nav from "@/Components/layout/Nav";
 import { useState } from "react";
 
 export default function Home() {
-  const [filter, setFilter] = useState("all"); // "all", "active", or "inactive"
+  const [filter, setFilter] = useState<"all" | "active" | "inactive">("all"); // "all", "active", or "inactive"
 
   return (
     <div className="px-[80px] bg-gradient-to-b from-[#050A1D] to-[#09143F] min-h-screen">

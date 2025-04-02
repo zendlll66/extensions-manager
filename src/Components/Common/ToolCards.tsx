@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
-const ToolCards = ({ filter }) => {
+interface ToolCardsProps {
+  filter: "all" | "active" | "inactive";
+}
+
+const ToolCards: React.FC<ToolCardsProps> = ({ filter }) => {
   const [tools, setTools] = useState([
     {
       "logo": "./assets/images/logo-devlens.svg",
