@@ -19,24 +19,24 @@ export default function Home() {
           <div className="space-x-3 md:mt-0 mt-4 ">
             <button 
               onClick={() => setFilter("all")}
-              className={`text-xl px-4 py-1 rounded-3xl transition-all duration-300 ${
-                filter === "all" ? "bg-[#F05E51] text-black" : darkMode ? "bg-[#3A3F5C] text-white" : "bg-[#cacaca] text-black"
+              className={`text-xl px-4 py-1 rounded-3xl transition-all duration-300 shadow-lg ${
+                filter === "all" ? "bg-[#F05E51] text-black" : darkMode ? "bg-[#3A3F5C] text-white" : "bg-[#eeeeee] text-black"
               }`}
             >
               All
             </button>
             <button 
               onClick={() => setFilter("active")}
-              className={`text-xl px-4 py-1 rounded-3xl transition-all duration-300 ${
-                filter === "active" ? "bg-[#F05E51] text-black" : darkMode ? "bg-[#3A3F5C] text-white" : "bg-[#cacaca] text-black"
+              className={`text-xl px-4 py-1 rounded-3xl transition-all duration-300 shadow-lg ${
+                filter === "active" ? "bg-[#F05E51] text-black" : darkMode ? "bg-[#3A3F5C] text-white" : "bg-[#eeeeee] text-black"
               }`}
             >
               Active
             </button>
             <button 
               onClick={() => setFilter("inactive")}
-              className={`text-xl px-4 py-1 rounded-3xl transition-all duration-300 ${
-                filter === "inactive" ? "bg-[#F05E51] text-black" : darkMode ? "bg-[#3A3F5C] text-white" : "bg-[#cacaca] text-black"
+              className={`text-xl px-4 py-1 rounded-3xl transition-all duration-300 shadow-lg ${
+                filter === "inactive" ? "bg-[#F05E51] text-black" : darkMode ? "bg-[#3A3F5C] text-white" : "bg-[#eeeeee] text-black"
               }`}
             >
               Inactive
@@ -44,7 +44,7 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <ToolCards filter={filter} />
+          <ToolCards filter={filter} darkMode={darkMode} />
         </div>
       </section>
     </div>

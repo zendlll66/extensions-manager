@@ -27,14 +27,17 @@ const Nav = ({ setDarkMode }: { setDarkMode: (value: boolean) => void }) => {
     };
 
     return (
-        <div className={`flex justify-between p-4 rounded-2xl transition-all duration-300 ${isDarkMode ? "bg-[#1F2535] text-white" : "bg-[#FCFDFE] text-black"}`}>
+        <div className={`flex justify-between p-4 rounded-2xl transition-all duration-300 shadow-lg ${isDarkMode ? "bg-[#1F2535] text-white" : "bg-[#FCFDFE] text-black"}`}>
             {/* โลโก้ */}
-            <Image src="/assets/images/logo.svg" alt="logo" width={120} height={120} className="ml-4" />
-
+            {isDarkMode ? (
+                <Image src="/assets/images/logo.png" alt="logo" width={160} height={120} className="ml-4 border-2 " />
+            ) : (
+                <Image src="/assets/images/logo-light.png" alt="logo" width={160} height={120} className="ml-4 border-2 " />
+            )}
             {/* ปุ่มเปลี่ยนธีม */}
             <button
                 onClick={toggleTheme}
-                className={`p-4 rounded-xl transition-colors duration-300 ${isDarkMode ? "bg-[#2F3548] text-white" : "bg-[#cacaca] text-black"}`}
+                className={`p-4 rounded-xl transition-colors duration-300 ${isDarkMode ? "bg-[#2F3548] text-white" : "bg-[#eeeeee] text-black"}`}
                 aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
             >
                 <Image
