@@ -80,7 +80,7 @@ const ToolCards: React.FC<ToolCardsProps> = ({ filter }) => {
     }
   ]);
 
-  
+
   interface Tool {
     logo: string;
     name: string;
@@ -92,9 +92,12 @@ const ToolCards: React.FC<ToolCardsProps> = ({ filter }) => {
     filter: "all" | "active" | "inactive";
   }
 
-  const toggleActive = (index: number): void => {
-    const updatedTools: Tool[] = [...tools];
-    updatedTools[index].isActive = !updatedTools[index].isActive;
+  const toggleActive = (toolName: string): void => {
+    const index = tools.findIndex(tool => tool.name === toolName);
+    if (index === -1) return; // ป้องกันข้อผิดพลาดหากหาไม่เจอ
+
+    const updatedTools = [...tools];
+    updatedTools[index] = { ...updatedTools[index], isActive: !updatedTools[index].isActive };
     setTools(updatedTools);
   };
 
@@ -110,46 +113,42 @@ const ToolCards: React.FC<ToolCardsProps> = ({ filter }) => {
     <div className="container mx-auto py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredTools.map((tool, index) => (
-          <div 
+          <div
             key={index}
-            className={`rounded-lg shadow-md overflow-hidden border-l-4 ${
-              tool.isActive ? 'border-green-500' : 'border-gray-400'
-            } ${!tool.isActive ? 'opacity-75' : ''}`}
+            className={`rounded-lg shadow-md overflow-hidden border-l-4 ${tool.isActive ? 'border-green-500' : 'border-gray-400'
+              } ${!tool.isActive ? 'opacity-75' : ''}`}
           >
-            <div className="p-5 bg-[#1A2035] text-white">
+            <div className="p-5 bg-[#1A2035] h-[200px] text-white">
               <div className="flex items-center mb-4">
-                <img 
-                  src={tool.logo} 
-                  alt={`${tool.name} logo`} 
+                <img
+                  src={tool.logo}
+                  alt={`${tool.name} logo`}
                   className="w-10 h-10 mr-3 object-contain"
                 />
                 <h3 className="text-lg font-semibold">{tool.name}</h3>
               </div>
-              
+
               <p className="text-gray-300 mb-4">{tool.description}</p>
-              
+
               <div className="flex items-center justify-between">
-                <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                  tool.isActive 
-                    ? 'bg-green-100 text-green-800' 
+                <span className={`px-3 py-1 rounded-full text-xs font-medium ${tool.isActive
+                    ? 'bg-green-100 text-green-800'
                     : 'bg-gray-100 text-gray-800'
-                }`}>
+                  }`}>
                   {tool.isActive ? 'Active' : 'Inactive'}
                 </span>
-                
+
                 <button
                   title={`Toggle ${tool.isActive ? 'Inactive' : 'Active'} state for ${tool.name}`}
-                  onClick={() => toggleActive(index)}
-                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                    tool.isActive 
-                      ? 'bg-green-500 focus:ring-green-500' 
+                  onClick={() => toggleActive(tool.name)}
+                  className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${tool.isActive
+                      ? 'bg-green-500 focus:ring-green-500'
                       : 'bg-gray-200 focus:ring-gray-500'
-                  }`}
+                    }`}
                 >
                   <span
-                    className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                      tool.isActive ? 'translate-x-6' : 'translate-x-1'
-                    }`}
+                    className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${tool.isActive ? 'translate-x-6' : 'translate-x-1'
+                      }`}
                   />
                 </button>
               </div>

@@ -1,41 +1,42 @@
 "use client";
 import ToolCards from "@/Components/Common/ToolCards";
 import Nav from "@/Components/layout/Nav";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [filter, setFilter] = useState<"all" | "active" | "inactive">("all"); // "all", "active", or "inactive"
+  const [filter, setFilter] = useState<"all" | "active" | "inactive">("all");
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className="px-[80px] bg-gradient-to-b from-[#050A1D] to-[#09143F] min-h-screen">
+    <div className={`px-[80px] min-h-screen transition-all duration-300 ${darkMode ? "bg-gradient-to-b from-[#050A1D] to-[#09143F] text-white" : "bg-white text-black"}`}>
       {/* ส่วนบนสุด */}
-      <header className=" pt-10">
-        <Nav />
+      <header className="pt-10">
+      <Nav setDarkMode={setDarkMode} />
       </header>
-      <section className="">
-        <div className="flex text-white text-3xl mt-10 justify-between font-medium">
+      <section>
+        <div className="flex text-3xl mt-10 justify-between font-medium">
           Extensions List
           <div className="space-x-3">
             <button 
               onClick={() => setFilter("all")}
-              className={`text-xl px-4 py-1 rounded-3xl ${
-                filter === "all" ? "bg-[#F05E51] text-black" : "bg-[#2F354B]"
+              className={`text-xl px-4 py-1 rounded-3xl transition-all duration-300 ${
+                filter === "all" ? "bg-[#F05E51] text-black" : darkMode ? "bg-[#3A3F5C] text-white" : "bg-[#cacaca] text-black"
               }`}
             >
               All
             </button>
             <button 
               onClick={() => setFilter("active")}
-              className={`text-xl px-4 py-1 rounded-3xl ${
-                filter === "active" ? "bg-[#F05E51] text-black" : "bg-[#2F354B]"
+              className={`text-xl px-4 py-1 rounded-3xl transition-all duration-300 ${
+                filter === "active" ? "bg-[#F05E51] text-black" : darkMode ? "bg-[#3A3F5C] text-white" : "bg-[#cacaca] text-black"
               }`}
             >
               Active
             </button>
             <button 
               onClick={() => setFilter("inactive")}
-              className={`text-xl px-4 py-1 rounded-3xl ${
-                filter === "inactive" ? "bg-[#F05E51] text-black" : "bg-[#2F354B]"
+              className={`text-xl px-4 py-1 rounded-3xl transition-all duration-300 ${
+                filter === "inactive" ? "bg-[#F05E51] text-black" : darkMode ? "bg-[#3A3F5C] text-white" : "bg-[#cacaca] text-black"
               }`}
             >
               Inactive
@@ -43,9 +44,9 @@ export default function Home() {
           </div>
         </div>
         <div>
-          <ToolCards filter={filter}/>
+          <ToolCards filter={filter} />
         </div>
       </section>
     </div>
-  )
+  );
 }
