@@ -83,16 +83,6 @@ const ToolCards: React.FC<ToolCardsProps> = ({ filter ,darkMode}) => {
   ]);
 
 
-  interface Tool {
-    logo: string;
-    name: string;
-    description: string;
-    isActive: boolean;
-  }
-
-  interface ToolCardsProps {
-    filter: "all" | "active" | "inactive";
-  }
 
   const toggleActive = (toolName: string): void => {
     const index = tools.findIndex(tool => tool.name === toolName);
