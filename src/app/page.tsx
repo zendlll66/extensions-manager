@@ -1,7 +1,7 @@
 "use client";
 import ToolCards from "@/Components/Common/ToolCards";
 import Nav from "@/Components/layout/Nav";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 export default function Home() {
   const [filter, setFilter] = useState<"all" | "active" | "inactive">("all");
