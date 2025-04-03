@@ -1,43 +1,23 @@
 # Extensions Manager
 
-🚀 **Extensions Manager** เป็นเว็บแอปที่ช่วยให้คุณสามารถจัดการส่วนขยายของเบราว์เซอร์ได้ง่ายขึ้น สามารถเปิด/ปิดการใช้งาน และดูรายละเอียดของแต่ละส่วนขยายได้อย่างสะดวกสบาย
+🚀 **Extensions Manager** is a sample web app that helps you easily manage browser extensions. You can enable/disable them and view the details of each extension conveniently.
 
-## 🌐 **ตัวอย่างการใช้งาน**
-🔗 [ดูตัวอย่างเว็บไซต์ที่นี่](https://extensions-manager-brown.vercel.app/)
+## 🌐 **Demo**
+🔗 [View the live demo here](https://extensions-manager-brown.vercel.app/)
 
-## 📌 **คุณสมบัติหลัก**
-- 🔍 **แสดงรายการส่วนขยาย** - พร้อมชื่อ, โลโก้ และคำอธิบายสั้นๆ
-- ✅ **เปิด/ปิดการใช้งาน** - สลับสถานะ Active/Inactive ได้ง่าย
-- 🎨 **รองรับ Dark Mode** - เปลี่ยนธีมได้ตามต้องการ
-- ⚡ **โหลดเร็ว** - ใช้ Next.js และ React เพื่อประสิทธิภาพสูงสุด
+## 📌 **Key Features**
+- 🔍 **Display Extension List** - Show extensions with name, logo, and a short description.
+- ✅ **Enable/Disable Extensions** - Easily toggle between Active/Inactive states.
+- 🎨 **Dark Mode Support** - Switch themes as per your preference.
+- ⚡ **Fast Load Speed** - Built with Next.js and React for optimal performance.
 
-## 🛠️ **เทคโนโลยีที่ใช้**
-- [Next.js 15](https://nextjs.org/) - เฟรมเวิร์กสำหรับ React ที่ให้ประสิทธิภาพสูง
-- [React](https://react.dev/) - ไลบรารีสำหรับสร้าง UI ที่ทันสมัย
-- [Tailwind CSS](https://tailwindcss.com/) - ระบบสไตล์ที่ยืดหยุ่นและง่ายต่อการใช้งาน
-- [Vercel](https://vercel.com/) - ระบบโฮสต์ที่รวดเร็วและเหมาะกับ Next.js
+## 🛠️ **Technologies Used**
+- [Next.js 15](https://nextjs.org/) - A high-performance framework for React.
+- [React](https://react.dev/) - A modern library for building user interfaces.
+- [Tailwind CSS](https://tailwindcss.com/) - A flexible and easy-to-use styling framework.
+- [Vercel](https://vercel.com/) - A fast hosting platform, ideal for Next.js apps.
 
-## 🚀 **เริ่มต้นใช้งาน**
-### 1️⃣ ติดตั้งแพ็กเกจที่จำเป็น
+## 🚀 **Getting Started**
+### 1️⃣ Install necessary packages
 ```sh
 npm install
-```
-
-### 2️⃣ รันโปรเจ็กต์ในโหมดพัฒนา
-```sh
-npm run dev
-```
-
-### 3️⃣ เปิดเบราว์เซอร์และเข้าถึงแอปพลิเคชัน
-```
-http://localhost:3000
-```
-
-## 🏗️ **การ Deploy**
-สามารถ Deploy ได้ง่ายๆ ผ่าน Vercel:
-```sh
-vercel
-```
-หรือ Push ขึ้น GitHub และเชื่อมต่อกับ Vercel
-
-
