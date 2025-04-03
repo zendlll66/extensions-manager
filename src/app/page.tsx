@@ -8,15 +8,15 @@ export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className={`px-[80px] min-h-screen transition-all duration-300 ${darkMode ? "bg-gradient-to-b from-[#050A1D] to-[#09143F] text-white" : "bg-white text-black"}`}>
+    <div className={`px-[80px] min-h-screen transition-all duration-300 ${darkMode ? "bg-gradient-to-b from-[#050A1D] to-[#09143F] text-white" : "bg-[#ECF5FC] text-black"}`}>
       {/* ส่วนบนสุด */}
       <header className="pt-10">
       <Nav setDarkMode={setDarkMode} />
       </header>
       <section>
-        <div className="flex text-3xl mt-10 justify-between font-medium">
+        <div className="flex flex-col  text-3xl  mt-10 justify-between font-medium">
           Extensions List
-          <div className="space-x-3">
+          <div className="space-x-3 md:mt-0 mt-4 ">
             <button 
               onClick={() => setFilter("all")}
               className={`text-xl px-4 py-1 rounded-3xl transition-all duration-300 ${
